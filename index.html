@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>First Page</title>
+    <title>Document</title>
 </head>
 <body>
-    <h2>This is my first page</h2>
-    <script src="main.js"></script>
+    <script>
+        //Date在无参构造时返回当前时间
+        //基于其他时间创建日期借助辅助函数，
+        //1. Date.parse():参数格式： 5/23/2019 或 May 23, 2019(字符串)
+        //2. Date.UTC() 参数：2005（年）,4(月，0为起点),5(日),17(时),55(分),55(秒)
+        //3可以将1,2的参数格式直接作为参数传入Date
+        //Date.now()：以毫秒形式返回当前时间，借助此函数（两次调用差）可以检测代码运行时间
+        let y2k = new Date("May 23, 2019")
+        let y3k = new Date(2005,4,5,17,55,55)
+        let start = Date.now()
+        console.log('good')
+        console.log(y2k) //"2019-05-22T16:00:00.000Z"
+        console.log(y3k) //"2005-05-05T09:55:55.000Z"
+        console.log(start) //1678756079049
+        //Date.toString()返回浏览器本地时间
+        //Date实例可以用比较符比较时间发生的前后
+
+        //Date的格式化方法；
+       let a= y2k.toDateString()
+        console.log(a) //Thu May 23 2019
+        let b = y2k.toTimeString()
+        console.log(b) //00:00:00 GMT+0800 (GMT+08:00)
+    </script>
 </body>
 </html>
-
